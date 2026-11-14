@@ -1,0 +1,26 @@
+﻿issue_id,dataset,issue,status,evidence,decision,impact
+M2-PMD-001,PMData,Streaming-safe profiling of large Fitbit JSON files,open,,Profile schema without loading >100 MB files wholly into memory.,Blocks only parsing paths that require unverified structure.
+M2-PMD-002,PMData,Timestamp and timezone conventions across Fitbit streams,open,,Preserve raw timestamps; do not normalize or align until verified.,Blocks timestamp normalization and time-based joins.
+M2-PMD-003,PMData,Units and definitions for Fitbit and structured reporting fields,open,,Preserve source values and labels; mark units unknown where not documented.,Blocks unsupported unit conversion and derived metrics.
+M2-PMD-004,PMData,Participant file coverage and completeness,open,,Inventory participant/file coverage and report gaps.,Blocks claims of complete cohort coverage.
+M2-PMD-005,PMData,"Official license, attribution and non-commercial terms",open,,Verify source terms before redistribution or deployment.,Blocks redistribution or deployment decisions requiring rights clearance.
+M2-SOC-001,SoccerMon,Full schema and row validation for all 15 wide-format files,open,,Validate each file independently before transformation.,Blocks transformation of any file whose schema is not verified.
+M2-SOC-002,SoccerMon,Player coverage and identifier completeness,open,,Preserve player IDs exactly; report coverage and gaps.,Blocks unsupported player-level completeness claims.
+M2-SOC-003,SoccerMon,Date format and locale validation,open,,Preserve raw date strings; parse only after full-file validation.,Blocks date normalization and date-based joins.
+M2-SOC-004,SoccerMon,Session JSON structure and complete traversal,open,,Profile and validate JSON structure before extracting sessions.,Blocks parsing of unverified structures.
+M2-SOC-005,SoccerMon,Wellness scales and units,open,,Preserve values and labels; do not reinterpret scales.,Blocks scale normalization and cross-source comparison.
+M2-SOC-006,SoccerMon,Training-load formula definitions and windows,open,,Preserve source metrics without recalculation.,Blocks recalculation or reinterpretation.
+M2-SOC-007,SoccerMon,Game-performance semantics and event timestamp formats,open,,Preserve source fields and raw timestamps pending documentation.,Blocks semantic recoding and time-based event alignment.
+M2-REST-001,REST,Sensor-axis and vm definitions and units,open,,Preserve raw channels; mark units/semantics unverified.,Blocks unit conversion and interpretation-dependent features.
+M2-REST-002,REST,"Sampling, epoch, timezone and study start-date rules",open,,Keep actigraphy and daily responses separate; preserve raw time fields.,Blocks temporal alignment and time-derived joins.
+M2-REST-003,REST,Unnamed index field semantics,open,,Retain as source_row_index; do not treat as timestamp.,Blocks timestamp interpretation of the index.
+M2-REST-004,REST,Sleep and caffeine units/definitions,open,,Preserve source values and field names without conversion.,Blocks unit conversion and derived intake/sleep metrics.
+M2-REST-005,REST,Questionnaire scales and ASBQ scoring key,open,,Preserve item responses; do not calculate composite scores.,Blocks questionnaire composite scoring.
+M2-REST-006,REST,Reconcile 21 actigraphy IDs against 22 questionnaire IDs,open,,Keep tables separate until full-set uniqueness and coverage are verified.,Blocks participant-level joins.
+M2-WEEE-001,WEEE,"Reconcile inventory discrepancy: 2,475 files/2.98 GB vs 1,122 files/3.19 GB",open,,"Repeat inventory with documented root, exclusions and hashing rules.",Blocks claims of final inventory completeness.
+M2-WEEE-002,WEEE,Dataset provenance and license/attribution,open,,Verify source documentation and reuse terms.,Blocks redistribution or deployment decisions requiring rights clearance.
+M2-WEEE-003,WEEE,"E4, earbuds, Muse, Zephyr and VO2 schemas and units",open,,Preserve raw modality files; parse only using verified schemas.,Blocks parsing/conversion of unverified modality files.
+M2-WEEE-004,WEEE,Device sampling rates and timestamp semantics,open,,Preserve raw timestamps and modality-specific cadence; do not resample or synchronize.,Blocks synchronization and resampling.
+M2-WEEE-005,WEEE,Zephyr binary .dat/.hed format and metadata semantics,open,,Preserve binary files unchanged; do not decode in baseline preprocessing.,Blocks Zephyr binary decoding.
+M2-WEEE-006,WEEE,Fitbit and Apple Watch participant mapping,open,,Keep shared exports unassigned until a verified mapping exists.,Blocks participant-level assignment and joins.
+M2-WEEE-007,WEEE,Questionnaire scoring keys and composite definitions,open,,Preserve item-level responses; do not calculate composites.,Blocks questionnaire composite scoring.

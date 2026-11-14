@@ -1,0 +1,59 @@
+# Python environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+._*
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Generated caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Raw datasets
+datasets/*/raw/
+
+# Generated audit reports
+datasets/_audit/
+datasets/_audit_reports/
+
+# Generated inspection reports
+datasets/_inspection/
+datasets/*/_inspection/
+datasets/*/_inspection_reports/
+
+# Empty or temporary notebook checkpoints
+.ipynb_checkpoints/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
